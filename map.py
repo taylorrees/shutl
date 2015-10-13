@@ -27,11 +27,13 @@ roof_floor = {
     Your inventory has been cleared.
     """
 
-        ],
+    ],
 
     "exits": { "right": "Roof Stairwell" },
 
-    "items": []
+    "items": [],
+
+    "damage": 0
 }
 
 roof_stairwell = {
@@ -50,7 +52,9 @@ roof_stairwell = {
 
     "exits": { "down": "Second Stairwell", "left": "Roof" },
 
-    "items": []
+    "items": [],
+
+    "damage": 0
 
 }
 
@@ -73,7 +77,9 @@ second_floor = {
 
     "exits": { "left": "Second Fire Escape","right": "Second Stairwell" },
 
-    "items": []
+    "items": [],
+
+    "damage": 0
 
 }
 
@@ -93,7 +99,9 @@ second_stairwell = {
 
     "exits": { "up": "Roof Stairwell", "down": "First Stairwell", "left": "Second" },
 
-    "items": []
+    "items": [],
+
+    "damage": 0
 
 }
 
@@ -114,7 +122,9 @@ second_fire_escape = {
 
     "exits": { "down": "First Fire Escape", "right": "Second" },
 
-    "items": []
+    "items": [],
+
+    "damage": 0
 
 }
 
@@ -137,7 +147,9 @@ first_floor = {
 
     "exits": { "left": "First Fire Escape", "right": "First Stairwell" },
 
-    "items": []
+    "items": [],
+
+    "damage": 0
 
 }
 
@@ -159,7 +171,9 @@ first_stairwell = {
 
     "exits": { "up": "Second Stairwell", "left": "First" },
 
-    "items": []
+    "items": [],
+
+    "damage": 0
 
 }
 
@@ -189,7 +203,9 @@ first_fire_escape = {
 
     "exits": { "up": "Second Fire Escape", "right": "First" },
 
-    "items": []
+    "items": [],
+
+    "damage": 0
 
 }
 
@@ -218,7 +234,9 @@ ground_floor = {
 
     "exits": { "right": "Ground Stairwell" },
 
-    "items": []
+    "items": [],
+
+    "damage": 0
 
 }
 
@@ -240,7 +258,9 @@ ground_stairwell = {
 
     "exits": { "up": "First Stairwell", "left": "Ground" },
 
-    "items": []
+    "items": [],
+
+    "damage": 0
 
 }
 
