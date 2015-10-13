@@ -80,9 +80,8 @@ def print_inventory_items(items):
     items = list_of_items(items)
 
     if items:
-        s = "You have: %s." % items
+        s = "You have: %s.\n" % items
         print(s)
-        print("Total mass: %skg.\n" % inventory_mass() )
 
 
 def print_room(room):
@@ -134,11 +133,24 @@ def print_room(room):
     # Display room name
     print()
     print("\n----------------------------------------------------------\n")
-    print(room["name"].upper())
-    print("\n----------------------------------------------------------\n")
+    print("    " + room["name"].upper())
+    print("\n----------------------------------------------------------")
     print()
-    # Display room description
-    print(room["description"])
+    """
+    Display room description
+    Uses the first item in the list by default
+    Alter this with an if statement to check for suitable items.
+
+    e.g.
+
+    if item_1 and item_2:
+        print room["description"][1]
+        room["description"].remove(0)
+    else:
+        print(room["description"][0])
+
+    """
+    print(room["description"][0])
     print("\n----------------------------------------------------------\n")
     print()
 
@@ -300,9 +312,7 @@ def execute_take(item_id):
     # If the match condition is True add item to
     # inventory and remove from the current room
 
-    new_total_mass = inventory_mass() + item["mass"]
-
-    if match and new_total_mass < 2.0:
+    if match:
         inventory.append(item)
         items.remove(item)
         print("You took %s." % item["name"])
