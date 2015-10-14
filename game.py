@@ -61,8 +61,17 @@ def print_room_items(room):
     items = list_of_items(room["items"])
 
     if items:
-        s = "There is %s here.\n" % items
+        s = "    There is %s here.\n" % items
         print(s)
+
+
+def print_break():
+    '''This function prints a series of lines to the console. Two
+    blank lines precede and succeed these lines in order to create
+    some whitespace in the console.
+    '''
+
+    print("\n\n----------------------------------------------------------\n\n")
 
 
 def print_inventory_items(items):
@@ -83,6 +92,67 @@ def print_inventory_items(items):
     if items:
         s = "You have: %s.\n" % items
         print(s)
+
+
+def find_in_inventory(inventory, item):
+    '''Find a specific item by its id in the players inventory.
+    Inventory must be passed as a list of dictionaries with each
+    dictionary containing an id field. Item must be passed as a
+    single dictionary containing an id field.
+    '''
+
+    for dictionary in inventory:
+        if dictionary["id"] == item["id"]:
+            return True
+    return False
+
+
+def clear_inventory():
+    '''Removes all items in the players inventory.'''
+
+    global inventory
+    inventory = []
+
+
+def room_description_selection(room):
+    '''This function is responsible for printing the correct description
+    depending on what items the player has in their inventory. If the items
+    in their inventory do not match the required items for a room then it
+    will print the default description (description[0]) otherwise the second
+    description (description[1]) will be displayed. Also, if the items match
+    the default description for the room is removed and replaced and the
+    players inventory is cleared, as the items have been used to complete a
+    task.
+    '''
+
+    match = True
+    required_items = room["required_items"]
+
+    # For each item in required items check if it exists in inventory.
+    # If it doesn't set match to False
+
+    for item in required_items:
+        result = find_in_inventory(inventory, item)
+        if not result:
+            match = False
+
+    # If there are no required items there is no match.
+
+    if not required_items:
+        match = False
+
+    description = room["description"]
+
+    # If there is a match show description[1] and remove the default
+    # description from the list. Clear the players inventory.
+    # Otherwise display the default description.
+
+    if match:
+        print(description[1])
+        del description[0]
+        clear_inventory()
+    else:
+        print(description[0])
 
 
 def print_room(room):
@@ -132,30 +202,14 @@ def print_room(room):
     Note: <BLANKLINE> here means that doctest should expect a blank line.
     """
     # Display room name
-    print()
-    print("\n----------------------------------------------------------\n")
+
+    print_break()
     print("    " + room["name"].upper())
-    print("\n----------------------------------------------------------")
-    print()
-    """
-    Display room description
-    Uses the first item in the list by default
-    Alter this with an if statement to check for suitable items.
-
-    e.g.
-
-    if item_1 and item_2:
-        print room["description"][1]
-        room["description"].remove(0)
-    else:
-        print(room["description"][0])
-
-    """
-    print(room["description"][0])
-    print("\n----------------------------------------------------------\n")
-    print()
-
+    print_break()
+    room_description_selection(room)
     print_room_items(room)
+    print_break()
+
 
 def exit_leads_to(exits, direction):
     """This function takes a dictionary of exits and a direction (a particular
@@ -266,7 +320,6 @@ def execute_go(direction):
     """
 
     # Declare current_room as a global variable (avoids unbound local error)
-    # ** ASK **
     global current_room
     # Get the exits for the current room
     exits = current_room["exits"]

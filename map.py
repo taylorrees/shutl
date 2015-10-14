@@ -1,3 +1,4 @@
+from items import *
 
 roof_floor = {
 
@@ -33,7 +34,9 @@ roof_floor = {
 
     "items": [],
 
-    "damage": 0
+    "damage": 0,
+
+    "required_items": [item_id]
 }
 
 roof_stairwell = {
@@ -54,7 +57,9 @@ roof_stairwell = {
 
     "items": [],
 
-    "damage": 0
+    "damage": 0,
+
+    "required_items": []
 
 }
 
@@ -77,9 +82,11 @@ second_floor = {
 
     "exits": { "left": "Second Fire Escape","right": "Second Stairwell" },
 
-    "items": [],
+    "items": [item_money],
 
-    "damage": 0
+    "damage": 0,
+
+    "required_items": []
 
 }
 
@@ -101,7 +108,9 @@ second_stairwell = {
 
     "items": [],
 
-    "damage": 0
+    "damage": 0,
+
+    "required_items": []
 
 }
 
@@ -124,7 +133,9 @@ second_fire_escape = {
 
     "items": [],
 
-    "damage": 0
+    "damage": 0,
+
+    "required_items": []
 
 }
 
@@ -149,7 +160,9 @@ first_floor = {
 
     "items": [],
 
-    "damage": 0
+    "damage": 0,
+
+    "required_items": []
 
 }
 
@@ -173,7 +186,9 @@ first_stairwell = {
 
     "items": [],
 
-    "damage": 0
+    "damage": 0,
+
+    "required_items": []
 
 }
 
@@ -205,7 +220,9 @@ first_fire_escape = {
 
     "items": [],
 
-    "damage": 0
+    "damage": 0,
+
+    "required_items": []
 
 }
 
@@ -236,7 +253,9 @@ ground_floor = {
 
     "items": [],
 
-    "damage": 0
+    "damage": 0,
+
+    "required_items": []
 
 }
 
@@ -260,7 +279,9 @@ ground_stairwell = {
 
     "items": [],
 
-    "damage": 0
+    "damage": 0,
+
+    "required_items": []
 
 }
 
