@@ -36,7 +36,7 @@ roof_floor = {
 
     "damage": 0,
 
-    "required_items": [item_id]
+    "required_items": [item_fuel, item_first_aid]
 }
 
 roof_stairwell = {
@@ -158,7 +158,7 @@ first_floor = {
 
     "exits": { "left": "First Fire Escape", "right": "First Stairwell" },
 
-    "items": [item_blunt_object, item_fuel],
+    "items": [item_brick, item_fuel],
 
     "damage": 0,
 
@@ -222,7 +222,7 @@ first_fire_escape = {
 
     "damage": 0,
 
-    "required_items": []
+    "required_items": [item_rope, item_brick]
 
 }
 
@@ -255,7 +255,7 @@ ground_floor = {
 
     "damage": 0,
 
-    "required_items": []
+    "required_items": [item_key, item_id]
 
 }
 

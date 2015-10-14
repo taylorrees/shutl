@@ -26,17 +26,17 @@ item_chocolate = {
 
 item_first_aid = {
 
-    "id": "first aid",
+    "id": "aid",
 
     "name": "first aid kit"
 
 }
 
-item_blunt_object = {
+item_brick = {
 
-    "id": "blunt object",
+    "id": "brick",
 
-    "name": "blunt object"
+    "name": "brick"
 
 }
 
