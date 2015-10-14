@@ -36,7 +36,7 @@ roof_floor = {
 
     "damage": 0,
 
-    "required_items": [item_id]
+    "required_items": []
 }
 
 roof_stairwell = {
