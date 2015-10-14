@@ -1,7 +1,7 @@
 from items import *
 from map import rooms
 
-inventory = [item_id, item_laptop]
+inventory = []
 health = 100
 
 # Start game at the reception

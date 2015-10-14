@@ -1,63 +1,56 @@
+
+
+item_key = {
+
+    "id": "key",
+
+    "name": "master key"
+
+}
+
+item_rope = {
+
+    "id": "rope",
+
+    "name": "some rope"
+
+}
+
+item_chocolate = {
+
+    "id": "chocolate",
+
+    "name": "a chocolate bar"
+
+}
+
+item_first_aid = {
+
+    "id": "first aid",
+
+    "name": "first aid kit"
+
+}
+
+item_blunt_object = {
+
+    "id": "blunt object",
+
+    "name": "blunt object"
+
+}
+
+item_fuel = {
+    "id": "fuel",
+
+    "name": "some fuel"
+
+}
+
 item_id = {
+
     "id": "id",
 
-    "name": "id card",
+    "name": "id card"
 
-    "description":
-    """You new shiny student ID card. Expires 1 June 2017.
-You wonder why they have printed a suicide hotline number on it?...""",
-
-    "mass": 0.005
-}
-
-item_laptop = {
-    "id": "laptop",
-
-    "name": "laptop",
-
-    "description":
-    "It has seen better days. At least it has a WiFi card!",
-
-    "mass": 1.8
-}
-
-item_money = {
-    "id": "money",
-
-    "name": "money",
-
-    "description":
-    "This wad of cash is barely enough to pay your tuition fees.",
-
-    "mass": 0.050
-}
-
-item_biscuits = {
-    "id": "biscuits",
-
-    "name": "a pack of biscuits",
-
-    "description": "A pack of biscuits.",
-
-    "mass": 0.250
-}
-
-item_pen = {
-    "id": "pen",
-
-    "name": "a pen",
-
-    "description": "A basic ballpoint pen.",
-
-    "mass": 0.050
-}
-
-item_handbook = {
-    "id": "handbook",
-
-    "name": "a student handbook",
-
-    "description": "This student handbook explains everything. Seriously.",
-
-    "mass": 0.250
 }
