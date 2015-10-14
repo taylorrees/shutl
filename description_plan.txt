@@ -1,91 +1,87 @@
 
 Game Intro
 
-You wake up on the second floor of the Queens building of Cardiff University in a blaze of thick smoke as you attempt to gasp for air you desperately need. You soon find out that you had been knocked unconscious in the mist of a raging fire. You must escape to save your life. On your way out there will be essential items which are needed to aid your attempt to live, only the correct item will aid the correct exit and save you from being engulfed by the fire or dying due to being smothered by the thick black smoke which is getting thicker and closer by the second. 
+You wake up on the second floor of the Queens building of Cardiff University in a blaze of thick smoke as you attempt to gasp for air you desperately need. You soon find out that you had been knocked unconscious in the mist of a raging fire. You must escape to save your life. On your way out there will be essential items which are needed to aid your attempt to live, only the correct item will aid the correct exit and save you from being engulfed by the fire or dying due to being smothered by the thick black smoke which is getting thicker and closer by the second.
 
-You are able to move left and right then up a floor or down a floor. There is a door to get out on the bottom floor which will allow you to escape and breathe the air you badly need, a fire exit towards the left hand side of the building, although you are agonisingly close to the ground floor but not close enough to jump without dying. Also, on the roof is a helicopter, the helicopter has come to save you but you may find a few obstacles on the way. 
+You are able to move left and right then up a floor or down a floor. There is a door to get out on the bottom floor which will allow you to escape and breathe the air you badly need, a fire exit towards the left hand side of the building, although you are agonisingly close to the ground floor but not close enough to jump without dying. Also, on the roof is a helicopter, the helicopter has come to save you but you may find a few obstacles on the way.
 
-Gaining the items along the way will help you no end, you must think wisely to which exit will be the easiest and quickest as your health will slowly be cascading due to the venomous fire and the dangerous smoke. The more moves you take, the more health you will lose, for example, a health draining climb up the steep steps of stairs will steal 5 health points, chose your moves wisely. 
+Gaining the items along the way will help you no end, you must think wisely to which exit will be the easiest and quickest as your health will slowly be cascading due to the venomous fire and the dangerous smoke. The more moves you take, the more health you will lose, for example, a health draining climb up the steep steps of stairs will steal 5 health points, chose your moves wisely.
 
 —
 
-Roof 
+Roof
 
-if they don't have first aid and fuel - Description 1
+If they don't have first aid and fuel - Description 1
 
-You have now entered the roof, on this floor there is a helicopter waiting to take you away from the blazing fire. In order to use the helicopter you will need a first aid kit, to aid the wounded pilot, and fuel. 
+You have now entered the roof, on this floor there is a helicopter waiting to take you away from the blazing fire. In order to use the helicopter you will need a first aid kit, to aid the wounded pilot, and fuel.
 
-if they do have first aid and fuel - Description 2
+If they do have first aid and fuel - Description 2
 
-You have now entered the roof, on this floor there is a helicopter waiting to take you away from the blazing fire. Unfortunately, in the time you have been gone the pilot has bled out. You are not able to fly the helicopter alone, find an alternative exit to escape the rising fire. You have already used the first aid kit to attempt to aid the pilot, it is now no use to your own health. The fuel you attained is now of no use. Your inventory has been cleared. 
-	
-— 	
+You have now entered the roof, on this floor there is a helicopter waiting to take you away from the blazing fire. Unfortunately, in the time you have been gone the pilot has bled out. You are not able to fly the helicopter alone, find an alternative exit to escape the rising fire. You have already used the first aid kit to attempt to aid the pilot, it is now no use to your own health. The fuel you attained is now of no use. Your inventory has been cleared.
 
-Second floor 
+—
 
-You are on the second floor. The air is smokey and your vision is blurred. To your left you notice a door to a fire escape, and to your right you spot a smoke filled stairwell. Make a careful choice as to which route you take as this might affect your health. 
+Second floor
+
+You are on the second floor. The air is smokey and your vision is blurred. To your left you notice a door to a fire escape, and to your right you spot a smoke filled stairwell. Make a careful choice as to which route you take as this might affect your health.
 
 —
 
 First Floor
 
-You are now on the first floor. The air is contaminated with thick smoke and you are finding it difficult to breathe. You can feel the heat rising from the stairwell which is to your right hand side. There is a fire exit to your left which appears to be safe. 
+You are now on the first floor. The air is contaminated with thick smoke and you are finding it difficult to breathe. You can feel the heat rising from the stairwell which is to your right hand side. There is a fire exit to your left which appears to be safe.
 
-— 
+—
 
 Ground Floor
 
 if they do have key and ID card
 
-The room is thick with smoke, you can barely see. You manage to stumble towards the front door and use the items you gained to escape from the fire. Congratulations you have won your life. 
+The room is thick with smoke, you can barely see. You manage to stumble towards the front door and use the items you gained to escape from the fire. Congratulations you have won your life.
 
-if they do not have the key and ID card 
+if they do not have the key and ID card
 
-The room is thick with smoke, you can barely see. You manage to stumble towards the front door and discover you do not have the items to open it. You explore the building carefully to gain the items that you require. 
+The room is thick with smoke, you can barely see. You manage to stumble towards the front door and discover you do not have the items to open it. You explore the building carefully to gain the items that you require.
 
-— 
+—
 
 First Floor - Fire Escape
 
 if they do have rope and blunt object
 
 You attach the hook and the rope to the fire escape.
-You have successfully attained the items which will allow you to cascade down to the ground floor. Your inventory has now been cleared. 
+You have successfully attained the items which will allow you to cascade down to the ground floor. Your inventory has now been cleared.
 
 if they do not have rope and blunt object
 
-The fire escape to the ground floor is damaged, the ladder is not safe to use. You must collect a combination of suitable items to allow you to smash through the window to the ground floor as there is debris preventing you from dropping straight down. 
+The fire escape to the ground floor is damaged, the ladder is not safe to use. You must collect a combination of suitable items to allow you to smash through the window to the ground floor as there is debris preventing you from dropping straight down.
 
 —
 
 Second Floor - Fire Escape
 
-You step outside into the fresh air onto the fire escape, there is a ladder leading down to the first floor fire escape. You can go down to get the the first floor. 
+You step outside into the fresh air onto the fire escape, there is a ladder leading down to the first floor fire escape. You can go down to get the the first floor.
 
 —
 
 Ground Floor - Stairs
 
-You entered the ground floor staircase, it was filled with thick smoke and dangerous fire. You foolishly ran through the fire and burnt yourself badly, you have lost 50 of your health points. 
+You entered the ground floor staircase, it was filled with thick smoke and dangerous fire. You foolishly ran through the fire and burnt yourself badly, you have lost 50 of your health points.
 
 —
 
-First Floor - Stairs 
+First Floor - Stairs
 
-You entered the first floor staircase, you can feel the fire roaring beneath you. You can not go down this staircase as it is engulfed with flames and smoke and would be incredibly dangerous. Please try another route. 
+You entered the first floor staircase, you can feel the fire roaring beneath you. You can not go down this staircase as it is engulfed with flames and smoke and would be incredibly dangerous. Please try another route.
 
 —
 
 Second floor - Stairs
 
-You have now entered the second floor stairwell. From here you can go up to the roof or down to the first floor. 
+You have now entered the second floor stairwell. From here you can go up to the roof or down to the first floor.
 
-— 
+—
 
 Roof - Stairs
 
-You have now entered the top stairwell. From here you can go out onto the roof or go down to the second floor. 
-
-
-
-
+You have now entered the top stairwell. From here you can go out onto the roof or go down to the second floor.
