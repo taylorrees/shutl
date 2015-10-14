@@ -4,7 +4,7 @@ from map import rooms
 from player import *
 from items import *
 from parser import *
-from visual_map import *
+from game_init import *
 
 
 def list_of_items(items):
@@ -440,8 +440,9 @@ def has_won():
 # This is the entry point of our program
 def main():
 
-    # Provides the user with a visual map at the start of the game.
-    print(visual_map)
+    # Provides the user with a description and visual map
+    # at the start of the game. Located in game_init.py
+    game_init()
 
     # Main game loop
     while True:
