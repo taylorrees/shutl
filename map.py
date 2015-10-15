@@ -249,7 +249,7 @@ ground_floor = {
 
     ],
 
-    "exits": { "right": "Ground Stairwell" },
+    "exits": { "up": "First Fire Escape", "right": "Ground Stairwell" },
 
     "items": [item_id],
 
