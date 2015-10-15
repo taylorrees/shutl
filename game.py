@@ -114,6 +114,29 @@ def clear_inventory():
     inventory = []
 
 
+def find_required_items(inventory, required_items):
+    '''This function takes a list of required item dictionaries and checks
+    whether each item exists in the players inventory. If all the items are
+    found the function will return True, otherwise it will return False.
+    '''
+
+    # For each item in required items check if it exists in inventory.
+    # If it doesn't set match to False
+
+    match = True
+
+    for item in required_items:
+        result = find_in_inventory(inventory, item)
+        if not result:
+            match = False
+
+    # If there are no required items there is no match.
+
+    if not required_items:
+        match = False
+
+    return match
+
 def room_description_selection(room):
     '''This function is responsible for printing the correct description
     depending on what items the player has in their inventory. If the items
@@ -125,21 +148,9 @@ def room_description_selection(room):
     task.
     '''
 
-    match = True
     required_items = room["required_items"]
 
-    # For each item in required items check if it exists in inventory.
-    # If it doesn't set match to False
-
-    for item in required_items:
-        result = find_in_inventory(inventory, item)
-        if not result:
-            match = False
-
-    # If there are no required items there is no match.
-
-    if not required_items:
-        match = False
+    match = find_required_items(inventory, required_items)
 
     description = room["description"]
 
@@ -153,6 +164,8 @@ def room_description_selection(room):
         clear_inventory()
     else:
         print(description[0])
+
+
 
 
 def print_room(room):
