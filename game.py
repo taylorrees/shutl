@@ -166,6 +166,17 @@ def room_description_selection(room):
         print(description[0])
 
 
+def fix_fire_escape(room):
+    '''This function will check if the room is the first floor fire escape.
+    If it is and the required items are in the players inventory then the
+    first floor fire escape will be repaired and the player can decend to the
+    ground floor.
+    '''
+
+    if room["name"] == "The First Floor Fire Escape":
+        if find_required_items(inventory, room["required_items"]):
+            exit = {"down": "Ground"}
+            room["exits"].update(exit)
 
 
 def print_room(room):
@@ -219,7 +230,11 @@ def print_room(room):
     print_break()
     print("    " + room["name"].upper())
     print_break()
+
+    fix_fire_escape(room)
+
     room_description_selection(room)
+
     print_room_items(room)
     print_break()
 
