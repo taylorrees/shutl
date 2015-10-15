@@ -66,7 +66,7 @@ def print_room_items(room):
 
 
 def print_break():
-    '''This function prints a series of lines to the console. Two
+    ''' This function prints a series of lines to the console. Two
     blank lines precede and succeed these lines in order to create
     some whitespace in the console.
     '''
