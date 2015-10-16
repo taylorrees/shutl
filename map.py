@@ -108,7 +108,7 @@ second_stairwell = {
 
     "items": [],
 
-    "damage": 0,
+    "damage": 5,
 
     "required_items": []
 
@@ -186,7 +186,7 @@ first_stairwell = {
 
     "items": [],
 
-    "damage": 0,
+    "damage": 10,
 
     "required_items": []
 
@@ -279,7 +279,7 @@ ground_stairwell = {
 
     "items": [],
 
-    "damage": 0,
+    "damage": 50,
 
     "required_items": []
 

@@ -3,7 +3,7 @@
 from map import rooms
 from player import *
 from items import *
-from parser import *
+from game_parser import *
 from game_init import *
 
 
@@ -517,6 +517,18 @@ def has_won():
     pass
 
 
+def health_is(health, room): 
+    """ This function is responsible for calculating the players health 
+    from their existing health and the damage attained from the room they
+    are in. Accepts health as an integer value and room as a dictionary
+    with a field damage."""
+
+    damage = (room["damage"])
+    return (health - damage)
+
+
+
+
 
 # This is the entry point of our program
 def main():
@@ -527,6 +539,8 @@ def main():
 
     # Main game loop
     while True:
+
+        global health 
 
         # check whether the player has met the victory criteria
         if has_won():
@@ -539,6 +553,14 @@ def main():
             # Display game status (room description, inventory etc.)
             print_room(current_room)
             print_inventory_items(inventory)
+
+            health = health_is(health, current_room)
+            print ("Your health is: " + str(health))
+            print ()
+
+            if health <= 0:
+                print ("YOU ARE DEAD SUCKER")
+                break 
 
             # Show the menu with possible actions and ask the player
             command = menu(current_room["exits"], current_room["items"], inventory)
