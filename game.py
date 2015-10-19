@@ -578,7 +578,7 @@ def main():
 
             health = health_is(health, current_room)
             print ("Your health is: " + str(health))
-            print ()
+            print
 
             if health <= 0:
                 print ("YOU ARE DEAD SUCKER")
