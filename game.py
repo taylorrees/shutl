@@ -459,7 +459,7 @@ def execute_take(item_id):
         # If the match condition is True add item to
         # inventory and remove from the current room
 
-        if match:
+        if match and len(inventory) < 2:
             inventory.append(item)
             items.remove(item)
             print("You took %s." % item["name"])
