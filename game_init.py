@@ -66,6 +66,6 @@ def game_init():
     '''This functions will print the game description and visual
     map (both above) to the console.
     '''
-    
+
     print(game_description)
-    #print(visual_map)
+    print(visual_map)
