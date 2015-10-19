@@ -417,6 +417,23 @@ def inventory_mass():
     return total_mass
 
 
+def eat_choc():
+    """This function is responsible for adding to health
+    when a chocolate bar is taken. If the health is 50 hp 
+    or above then health is reset. Otherwise 50 hp will be added.
+    """
+
+    global health
+
+    if health >= 50:
+        health = 100
+    else:
+        health += 50
+
+    current_room["items"].remove(item_chocolate)
+
+
+
 def execute_take(item_id):
     """This function takes an item_id as an argument and moves this item from the
     list of items in the current room to the player's inventory. However, if
@@ -424,26 +441,30 @@ def execute_take(item_id):
     "You cannot take that."
     """
 
-    items = current_room["items"]
-
-    # Set default result of match for item to False
-    match = False
-
-    for item in items:
-        if item["id"] == item_id:
-            # If the item is found set match to True
-            match = True
-            break
-
-    # If the match condition is True add item to
-    # inventory and remove from the current room
-
-    if match:
-        inventory.append(item)
-        items.remove(item)
-        print("You took %s." % item["name"])
+    if item_id == "chocolate":
+        eat_choc()
     else:
-        print("You cannot take that.")
+
+        items = current_room["items"]
+
+        # Set default result of match for item to False
+        match = False
+
+        for item in items:
+            if item["id"] == item_id:
+                # If the item is found set match to True
+                match = True
+                break
+
+        # If the match condition is True add item to
+        # inventory and remove from the current room
+
+        if match:
+            inventory.append(item)
+            items.remove(item)
+            print("You took %s." % item["name"])
+        else:
+            print("You cannot take that.")
 
 
 
@@ -591,6 +612,7 @@ def random_place_choc(rooms):
     stop = len(potential_rooms)
     n = randrange(0, stop)
     room = rooms[potential_rooms[n]]
+    print(room["name"])
     room["items"].append(item_chocolate)
 
 
