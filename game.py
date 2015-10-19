@@ -11,8 +11,8 @@ def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
     returns a comma-separated list of item names (as a string). For example:
 
-    >>> list_of_items([item_pen, item_handbook])
-    'a pen, a student handbook'
+    >>> list_of_items([item_key, item_rope])
+    'master key, some rope'
 
     >>> list_of_items([item_id])
     'id card'
@@ -20,8 +20,8 @@ def list_of_items(items):
     >>> list_of_items([])
     ''
 
-    >>> list_of_items([item_money, item_handbook, item_laptop])
-    'money, a student handbook, laptop'
+    >>> list_of_items([item_brick, item_chocolate, item_fuel])
+    'brick, a chocolate bar, some fuel'
 
     """
 
@@ -42,15 +42,15 @@ def print_room_items(room):
     items.py for the definition of an item. This function uses list_of_items()
     to produce a comma-separated list of item names. For example:
 
-    >>> print_room_items(rooms["Reception"])
-    There is a pack of biscuits, a student handbook here.
+    >>> print_room_items(rooms["Roof"])
+        There is master key, some rope here.
     <BLANKLINE>
 
-    >>> print_room_items(rooms["Office"])
-    There is a pen here.
+    >>> print_room_items(rooms["Second"])
+        There is first aid kit here.
     <BLANKLINE>
 
-    >>> print_room_items(rooms["Admins"])
+    >>> print_room_items(rooms["Ground Stairwell"])
 
     (no output)
 
@@ -188,39 +188,82 @@ def print_room(room):
     in the room, the list of items is printed next followed by a blank line
     (use print_room_items() for this). For example:
 
-    >>> print_room(rooms["Office"])
+    >>> print_room(rooms["Roof"])
     <BLANKLINE>
-    THE GENERAL OFFICE
     <BLANKLINE>
-    You are standing next to the cashier's till at
-    30-36 Newport Road. The cashier looks at you with hope
-    in their eyes. If you go west you can return to the
-    Queen's Buildings.
+    ----------------------------------------------------------
     <BLANKLINE>
-    There is a pen here.
+    <BLANKLINE>
+        THE ROOF
+    <BLANKLINE>
+    <BLANKLINE>
+    ----------------------------------------------------------
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+        You have now entered the roof, on this floor
+        there is a helicopter waiting to take you away
+        from the blazing fire. In order to use the
+        helicopter you will need a first aid kit, to
+        aid the wounded pilot, and fuel.
+    <BLANKLINE>
+        There is master key, some rope here.
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    ----------------------------------------------------------
+    <BLANKLINE>
     <BLANKLINE>
 
-    >>> print_room(rooms["Reception"])
+    >>> print_room(rooms["Roof Stairwell"])
     <BLANKLINE>
-    RECEPTION
     <BLANKLINE>
-    You are in a maze of twisty little passages, all alike.
-    Next to you is the School of Computer Science and
-    Informatics reception. The receptionist, Matt Strangis,
-    seems to be playing an old school text-based adventure
-    game on his computer. There are corridors leading to the
-    south and east. The exit is to the west.
+    ----------------------------------------------------------
     <BLANKLINE>
-    There is a pack of biscuits, a student handbook here.
+    <BLANKLINE>
+        THE ROOF STAIRWELL
+    <BLANKLINE>
+    <BLANKLINE>
+    ----------------------------------------------------------
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+        You have now entered the top stairwell.
+        From here you can go out onto the roof or
+        go down to the second floor.
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    ----------------------------------------------------------
+    <BLANKLINE>
     <BLANKLINE>
 
-    >>> print_room(rooms["Admins"])
+    >>> print_room(rooms["Second"])
     <BLANKLINE>
-    MJ AND SIMON'S ROOM
     <BLANKLINE>
-    You are leaning agains the door of the systems managers'
-    room. Inside you notice Matt "MJ" John and Simon Jones. They
-    ignore you. To the north is the reception.
+    ----------------------------------------------------------
+    <BLANKLINE>
+    <BLANKLINE>
+        THE SECOND FLOOR
+    <BLANKLINE>
+    <BLANKLINE>
+    ----------------------------------------------------------
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+        You are on the second floor. The air is
+        smokey and your vision is blurred. To your
+        left you notice a door to a fire escape, and
+        to your right you spot a smoke filled stairwell.
+        Make a careful choice as to which route you
+        take as this might affect your health.
+    <BLANKLINE>
+        There is first aid kit here.
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    ----------------------------------------------------------
+    <BLANKLINE>
     <BLANKLINE>
 
     Note: <BLANKLINE> here means that doctest should expect a blank line.
