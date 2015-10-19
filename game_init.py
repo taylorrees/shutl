@@ -68,4 +68,4 @@ def game_init():
     '''
 
     print(game_description)
-    #print(visual_map)
+    print(visual_map)
