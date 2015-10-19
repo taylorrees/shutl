@@ -568,18 +568,14 @@ def has_won():
     """ This function determines whether or not the user has won the game.
     It defines the victory criteria. The victory criteria are that all items
     in the game must be dropped at reception.
-
-
-    won = False
-
-    items = rooms["Tutor"]["items"]
-    if len(items) == 5:
-        won = True
-
-    return won
-
     """
-    pass
+    
+    if current_room == rooms["Ground"]: 
+        required_items = current_room["required_items"]
+        items_found = find_required_items(inventory, required_items)
+        if items_found: 
+            return True
+     
 
 
 def health_is(health, room): 
@@ -632,7 +628,7 @@ def main():
         # check whether the player has met the victory criteria
         if has_won():
 
-            print("\nCongratulations, you have won!\n".upper())
+            print("\nCONGRATULATIONS YOU WON!")
             break
 
         else:
