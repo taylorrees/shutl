@@ -552,11 +552,11 @@ def move(exits, direction):
     dictionary "exits" of avaiable exits, they choose to move towards the exit
     with the name given by "direction". For example:
 
-    >>> move(rooms["Reception"]["exits"], "south") == rooms["Admins"]
+    >>> move(rooms["First"]["exits"], "left") == rooms["First Fire Escape"]
     True
-    >>> move(rooms["Reception"]["exits"], "east") == rooms["Tutor"]
+    >>> move(rooms["First Stairwell"]["exits"], "up") == rooms["Second Stairwell"]
     True
-    >>> move(rooms["Reception"]["exits"], "west") == rooms["Office"]
+    >>> move(rooms["First Stairwell"]["exits"], "up") == rooms["Second"]
     False
     """
 
