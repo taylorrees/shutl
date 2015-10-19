@@ -5,6 +5,7 @@ from player import *
 from items import *
 from game_parser import *
 from game_init import *
+from random import randrange
 
 
 def list_of_items(items):
@@ -527,7 +528,27 @@ def health_is(health, room):
     return (health - damage)
 
 
+def random_place_choc(rooms):
+    """This function is responsible for the random placement of the item item_chocolate. 
+    It loops through each of the rooms apart from the ground floor and the ground floor
+    stairwell and selects a room at random in which to place the item. 
+    """
 
+    potential_rooms = [
+        "Roof", 
+        "Roof Stairwell", 
+        "Second", 
+        "Second Stairwell",
+        "Second Fire Escape",
+        "First",
+        "First Stairwell",
+        "First Fire Escape"
+    ]
+
+    stop = len(potential_rooms)
+    n = randrange(0, stop)
+    room = rooms[potential_rooms[n]]
+    room["items"].append(item_chocolate)
 
 
 # This is the entry point of our program
@@ -536,11 +557,12 @@ def main():
     # Provides the user with a description and visual map
     # at the start of the game. Located in game_init.py
     game_init()
+    random_place_choc(rooms)
 
     # Main game loop
     while True:
 
-        global health 
+        global health
 
         # check whether the player has met the victory criteria
         if has_won():
