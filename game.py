@@ -288,12 +288,12 @@ def exit_leads_to(exits, direction):
     exit taken from this dictionary). It returns the name of the room into which
     this exit leads. For example:
 
-    >>> exit_leads_to(rooms["Reception"]["exits"], "south")
-    "MJ and Simon's room"
-    >>> exit_leads_to(rooms["Reception"]["exits"], "east")
-    "your personal tutor's office"
-    >>> exit_leads_to(rooms["Tutor"]["exits"], "west")
-    'Reception'
+    >>> exit_leads_to(rooms["Roof"]["exits"], "right")
+    'The Roof Stairwell'
+    >>> exit_leads_to(rooms["Roof Stairwell"]["exits"], "down")
+    'The Second Floor Stairwell'
+    >>> exit_leads_to(rooms["Second Fire Escape"]["exits"], "down")
+    'The First Floor Fire Escape'
     """
     return rooms[exits[direction]]["name"]
 
@@ -372,13 +372,13 @@ def is_valid_exit(exits, chosen_exit):
     the name of the exit has been normalised by the function normalise_input().
     For example:
 
-    >>> is_valid_exit(rooms["Reception"]["exits"], "south")
+    >>> is_valid_exit(rooms["Ground Stairwell"]["exits"], "up")
     True
-    >>> is_valid_exit(rooms["Reception"]["exits"], "up")
+    >>> is_valid_exit(rooms["Ground Stairwell"]["exits"], "down")
     False
-    >>> is_valid_exit(rooms["Parking"]["exits"], "west")
+    >>> is_valid_exit(rooms["First Stairwell"]["exits"], "right")
     False
-    >>> is_valid_exit(rooms["Parking"]["exits"], "east")
+    >>> is_valid_exit(rooms["First Stairwell"]["exits"], "left")
     True
     """
     return chosen_exit in exits
