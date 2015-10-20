@@ -707,61 +707,71 @@ def main():
 
     # Provides the user with a description and visual map
     # at the start of the game. Located in game_init.py
-    game_init()
-    random_place_choc(rooms)
 
-    # Main game loop
-    while True:
+    try:
+        game_init()
+        random_place_choc(rooms)
 
-        global health
+        # Main game loop
+        while True:
 
-        clear_screen()
+            global health
 
-        # check whether the player has met the victory criteria
-        if has_won():
+            clear_screen()
 
-            print("\nCONGRATULATIONS YOU WON!")
-            print("\nYou should have used the lift.")
-            break
+            # check whether the player has met the victory criteria
+            if has_won():
 
-        else:
+                print("\nCONGRATULATIONS YOU WON!")
+                print("\nYou should have used the lift.")
+                break
 
-            try:
+            else:
 
-                # Display game status (room description, inventory etc.)
-                print_room(current_room)
-                print_inventory_items(inventory)
+                try:
 
-                health = health_is(health, current_room)
-                print ("Your health is: " + str(health))
-                print
+                    # Display game status (room description, inventory etc.)
+                    print_room(current_room)
+                    print_inventory_items(inventory)
 
-                if health <= 0:
-                    print ("YOU ARE DEAD SUCKER")
-                    break
+                    health = health_is(health, current_room)
+                    print ("Your health is: " + str(health))
+                    print
 
-                if current_room == rooms["Third"]:
-                    break_glass_game()
+                    if health <= 0:
+                        print ("YOU ARE DEAD SUCKER")
+                        break
 
-                # Show the menu with possible actions and ask the player
-                command = menu(current_room["exits"], current_room["items"], inventory)
+                    if current_room == rooms["Third"]:
+                        break_glass_game()
 
-                if command == True:
-                    print("\nCONGRATULATIONS SMART PERSON, YOU WON!\n")
-                    break
+                    # Show the menu with possible actions and ask the player
+                    command = menu(current_room["exits"], current_room["items"], inventory)
 
-                # Execute the player's command
-                execute_command(command)
+                    if command == True:
+                        print("\nCONGRATULATIONS SMART PERSON, YOU WON!\n")
+                        break
 
-            except KeyboardInterrupt:
+                    # Execute the player's command
+                    execute_command(command)
 
-                quit = input("\nAre you sure you want to quit? (Y/N) >>> ")
-                if quit.upper().strip() == "Y":
-                    break
-                else:
-                    print("Resuming game...")
+                except KeyboardInterrupt:
+
+                    quit = input("\nAre you sure you want to quit? (Y/N) >>> ")
+                    if quit.upper().strip() == "Y":
+                        break
+                    else:
+                        print("Resuming game...")
+                        pass
+
+                except EOFError:
+                    print("You cannot do that.")
                     pass
 
+    # Allows the user to quit the game gracefully.
+    except KeyboardInterrupt:
+        print("You quit the game.")
+        pass
 
 
 # Are we being run as a script? If so, run main().
