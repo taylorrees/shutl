@@ -85,6 +85,6 @@ def game_init():
     print(visual_map)
     print("SCROLL UP TO VIEW GAME DESCRIPTION\n")
 
-    start = input("Are you ready to start? >>> ")
+    start = input("Press enter to start >>> ")
 
     print("Starting game...")
