@@ -563,6 +563,22 @@ def execute_command(command):
 
     if command[0] == "go":
         if len(command) > 1:
+            if len(command) > 2:
+                if command[2] == "take":
+                    if len(command) > 3:
+                        execute_take(command[3])
+                    else:
+                        print(">> That can't be taken.")
+                if command[2] == "drop":
+                    if len(command) > 3:
+                        execute_drop(command[3])
+                    else:
+                        print(">> That can't be dropped.")
+                if command[2] == "view":
+                    if len(command) > 3:
+                        execute_take(command[3])
+                    else:
+                        print(">> That can't be viewed.")           
             execute_go(command[1])
         else:
             print(">> Go where?")
@@ -589,6 +605,7 @@ def execute_command(command):
         print(">> This makes no sense.")
 
 
+
 def menu(exits, room_items, inv_items):
     """This function, given a dictionary of possible exits from a room, and a list
     of items found in the room and carried by the player, prints the menu of
@@ -605,6 +622,7 @@ def menu(exits, room_items, inv_items):
 
     # Normalise the input
     normalised_user_input = normalise_input(user_input)
+
 
     if normalised_user_input == ["use", "lift"]:
         return True
@@ -747,6 +765,7 @@ def main():
 
                     # Show the menu with possible actions and ask the player
                     command = menu(current_room["exits"], current_room["items"], inventory)
+                    print(command)
 
                     if command == True:
                         print("\nCONGRATULATIONS SMART PERSON, YOU WON!\n")

@@ -1,7 +1,7 @@
 import string
 
 # List of "unimportant" words (feel free to add more)
-skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
+skip_words = ['a', 'about', 'all','and','an','another', 'any', 'around', 'at',
               'bad', 'beautiful', 'been', 'better', 'big', 'can', 'every', 'for',
               'from', 'good', 'have', 'her', 'here', 'hers', 'his', 'how',
               'i', 'if', 'in', 'into', 'is', 'it', 'its', 'large', 'later',
@@ -34,6 +34,7 @@ def filter_words(words, skip_words):
             required.append(word)
 
     return required
+    print(required)
 
 
 def remove_punct(text):
