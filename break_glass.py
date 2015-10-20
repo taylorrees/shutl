@@ -89,6 +89,7 @@ def break_glass_game():
             else:
                 print(failure_string)
 
+            time.sleep(1)
             break
 
         # If they do not.
