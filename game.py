@@ -537,7 +537,8 @@ def execute_view(item):
 
     if item == "map":
         print(visual_map)
-        start = input("Back to game? >>> ")
+        start = input("Press enter to continue game >>> ")
+        print("Continuing game...")
 
 
 def execute_command(command):
