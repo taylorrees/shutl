@@ -547,13 +547,13 @@ def execute_command(command):
 
     >>> execute_command(["go"])
     <BLANKLINE>
-    Go where?
+    >> Go where?
     >>> execute_command(["take"])
     <BLANKLINE>
-    Take what?
+    >> Take what?
     >>> execute_command(["move"])
     <BLANKLINE>
-    This makes no sense.
+    >> This makes no sense.
     """
 
     print()
@@ -565,28 +565,28 @@ def execute_command(command):
         if len(command) > 1:
             execute_go(command[1])
         else:
-            print(">>> Go where?")
+            print(">> Go where?")
 
     elif command[0] == "take":
         if len(command) > 1:
             execute_take(command[1])
         else:
-            print(">>> Take what?")
+            print(">> Take what?")
 
     elif command[0] == "drop":
         if len(command) > 1:
             execute_drop(command[1])
         else:
-            print(">>> Drop what?")
+            print(">> Drop what?")
 
     elif command[0] == "view":
         if len(command) > 1:
             execute_view(command[1])
         else:
-            print(">>> View what?")
+            print(">> View what?")
 
     else:
-        print(">>> This makes no sense.")
+        print(">> This makes no sense.")
 
 
 def menu(exits, room_items, inv_items):
@@ -651,9 +651,9 @@ def health_is(health, room):
     >>> health_is(health, rooms["Roof"])
     100
     >>> health_is(65, rooms["Second Stairwell"])
-    60
+    55
     >>> health_is(0, rooms["Second Stairwell"])
-    -5
+    -10
     """
 
     damage = (room["damage"])
