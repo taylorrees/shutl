@@ -34,7 +34,6 @@ def filter_words(words, skip_words):
             required.append(word)
 
     return required
-    print(required)
 
 
 def remove_punct(text):
