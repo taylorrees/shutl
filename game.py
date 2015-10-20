@@ -565,19 +565,21 @@ def execute_command(command):
     if command[0] == "go":
         if len(command) > 1:
             if len(command) > 2:
-                if command[2] == "take":
+                if command[3] == "go":
+                    print(">> You can only go to one area at a time.")
+                elif command[2] == "take":
                     if len(command) > 3:
                         execute_take(command[3])
                     else:
                         print(">> That can't be taken.")
-                if command[2] == "drop":
+                elif command[2] == "drop":
                     if len(command) > 3:
                         execute_drop(command[3])
                     else:
                         print(">> That can't be dropped.")
-                if command[2] == "view":
+                elif command[2] == "view":
                     if len(command) > 3:
-                        execute_take(command[3])
+                        print(">> Wait until you are stationary before checking map")
                     else:
                         print(">> That can't be viewed.")           
             execute_go(command[1])
@@ -587,12 +589,30 @@ def execute_command(command):
     elif command[0] == "take":
         if len(command) > 1:
             execute_take(command[1])
+            if len(command) > 2:
+                if command[2] == "go":
+                    if len(command) > 3:
+                        execute_go(command[3])
+                    else:
+                        print(">> You can't go there.")
+                elif command[2] == "drop":
+                    if len(command) > 3:
+                        execute_drop(command[3])
+                    else:
+                        print(">> That can't be dropped.")
+                elif command[2] == "take":
+                    if len(command) > 3:
+                        execute_take([command[3]])
+                    else:
+                        print(">> That can't be taken.")            
         else:
             print(">> Take what?")
 
     elif command[0] == "drop":
         if len(command) > 1:
             execute_drop(command[1])
+            if command[2] == "go"
+            
         else:
             print(">> Drop what?")
 
