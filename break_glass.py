@@ -24,8 +24,7 @@ def count_hits(seconds):
     """
 
     print("""
-    To break the glass you must repeatedly hit the return key on your
-    keyboard. You have %s seconds in which to break the glass, good luck!
+    You have %s seconds in which to break the glass, good luck!
     """ % seconds)
 
     count = 0
@@ -66,16 +65,17 @@ def break_glass_game():
     seconds_to_run = 5
     required_hits = 40
 
-    print("Do you wish to play?\n")
-
     while True:
 
+        print("""
+        To break the glass you must repeatedly hit the return key on your
+        keyboard.
+        """)
         # Ask the user if they wish to play.
-        print("To play, type YES. Otherwise, type NO.")
-        play = input(">>> ")
+        play = input("Do you wish to play? (Y/N) >>> ")
 
         # If they want to play.
-        if play.upper().strip() == "YES":
+        if play.upper().strip() == "Y":
 
             # Count the number of hits.
             hits = count_hits(seconds_to_run)
@@ -94,7 +94,7 @@ def break_glass_game():
             break
 
         # If they do not.
-        elif play.upper().strip() == "NO":
+        elif play.upper().strip() == "N":
 
             print("\nYou have chosen not to play.\n")
             break
