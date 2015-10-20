@@ -69,7 +69,11 @@ visual_map = '''
         ........|____________________|____________|
 
 
-        START:'''
+
+        SCROLL UP TO VIEW GAME DESCRIPTION
+
+        Starting game...
+        '''
 
 
 def game_init():

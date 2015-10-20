@@ -711,30 +711,41 @@ def main():
 
         else:
 
-            # Display game status (room description, inventory etc.)
-            print_room(current_room)
-            print_inventory_items(inventory)
+            try:
 
-            health = health_is(health, current_room)
-            print ("Your health is: " + str(health))
-            print
+                # Display game status (room description, inventory etc.)
+                print_room(current_room)
+                print_inventory_items(inventory)
 
-            if health <= 0:
-                print ("YOU ARE DEAD SUCKER")
-                break
+                health = health_is(health, current_room)
+                print ("Your health is: " + str(health))
+                print
 
-            if current_room == rooms["Third"]:
-                break_glass_game()
+                if health <= 0:
+                    print ("YOU ARE DEAD SUCKER")
+                    break
 
-            # Show the menu with possible actions and ask the player
-            command = menu(current_room["exits"], current_room["items"], inventory)
+                if current_room == rooms["Third"]:
+                    break_glass_game()
 
-            if command == True:
-                print("\nCONGRATULATIONS SMART PERSON, YOU WON!\n")
-                break
+                # Show the menu with possible actions and ask the player
+                command = menu(current_room["exits"], current_room["items"], inventory)
 
-            # Execute the player's command
-            execute_command(command)
+                if command == True:
+                    print("\nCONGRATULATIONS SMART PERSON, YOU WON!\n")
+                    break
+
+                # Execute the player's command
+                execute_command(command)
+
+            except KeyboardInterrupt:
+
+                quit = input("\nAre you sure you want to quit? (Y/N) >>> ")
+                if quit.upper().strip() == "Y":
+                    break
+                else:
+                    print("Resuming game...")
+                    pass
 
 
 
