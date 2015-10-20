@@ -58,6 +58,7 @@ def remove_damage(rooms):
 
     for room in rooms:
         rooms[room]["damage"] = 0
+    rooms["Ground Stairwell"]["damage"] = 50
 
 
 def break_glass_game():

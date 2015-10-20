@@ -557,10 +557,13 @@ def menu(exits, room_items, inv_items):
     print_menu(exits, room_items, inv_items)
 
     # Read player's input
-    user_input = input("> ")
+    user_input = input(">>> ")
 
     # Normalise the input
     normalised_user_input = normalise_input(user_input)
+
+    if normalised_user_input == ["use", "lift"]:
+        return True
 
     return normalised_user_input
 
@@ -649,6 +652,7 @@ def main():
         if has_won():
 
             print("\nCONGRATULATIONS YOU WON!")
+            print("\nYou should have used the lift.")
             break
 
         else:
@@ -670,6 +674,10 @@ def main():
 
             # Show the menu with possible actions and ask the player
             command = menu(current_room["exits"], current_room["items"], inventory)
+
+            if command == True:
+                print("\nCONGRATULATIONS SMART PERSON, YOU WON!\n")
+                break
 
             # Execute the player's command
             execute_command(command)
