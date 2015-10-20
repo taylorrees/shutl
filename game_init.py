@@ -26,16 +26,19 @@ game_description = '''
         on the way.
 
         Finding the items throughout the building will help 
-        you overcome the obstacles along the way. There is 
-        a chocolate bar that you may pick up along your path, 
-        if your health is below 50 it will give you 50 bonus 
-        points otherwise if your above 50 then it regenerates
-        your health back to 100. You must think wisely to 
-        which exit will be the easiest and quickest as your 
-        health will slowly be decreasing due to the venomous 
-        fire and the dangerous smoke. The more moves you take, 
-        the more health you may lose, for example, moving from 
-        room to room will differ from how many points it will 
+        you overcome the obstacles along the way. You can 
+        only carry TWO ITEMS at a time. You can drop certain 
+        items to pick up others, but you have to remember 
+        where you left them. There is a chocolate bar that 
+        you may pick up along your path, if your health is 
+        below 50 it will give you 50 bonus points otherwise 
+        if your above 50 then it regenerates your health back 
+        to 100. You must think wisely to which exit will be 
+        the easiest and quickest as your health will slowly 
+        be decreasing due to the venomous fire and the 
+        dangerous smoke. The more moves you take, the more 
+        health you may lose, for example, moving from room 
+        to room will differ from how many points it will 
         take from your health.
 
         Choose your moves wisely.
