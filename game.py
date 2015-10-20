@@ -537,6 +537,7 @@ def execute_view(item):
 
     if item == "map":
         print(visual_map)
+        start = input("Back to game? >>> ")
 
 
 def execute_command(command):
@@ -692,7 +693,7 @@ def clear_screen():
     """
 
     # Pause execution
-    time.sleep(1.5)
+    time.sleep(0.5)
 
     # Clear the game screen
     if os.name == 'nt':
