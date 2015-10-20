@@ -7,6 +7,8 @@ from game_parser import *
 from game_init import *
 from random import randrange
 from break_glass import *
+import os
+import time
 
 
 def list_of_items(items):
@@ -401,9 +403,9 @@ def execute_go(direction):
 
     if is_valid_exit(exits, direction):
         current_room = move(exits, direction)
-        print("You're moving into %s." % current_room["name"])
+        print(">>> You're moving into %s." % current_room["name"])
     else:
-        print("You cannot go there.")
+        print(">>> You cannot go there.")
 
 
 def inventory_mass():
@@ -465,9 +467,9 @@ def execute_take(item_id):
         if match and len(inventory) < 2:
             inventory.append(item)
             items.remove(item)
-            print("You took %s." % item["name"])
+            print(">>> You took %s." % item["name"])
         else:
-            print("You cannot take that.")
+            print(">>> You cannot take that.")
 
 
 
@@ -491,7 +493,7 @@ def execute_drop(item_id):
         inventory.remove(item)
         print("You dropped %s." % item["name"])
     else:
-        print("You cannot drop that.")
+        print(">>> You cannot drop that.")
 
 
 def execute_view(item):
@@ -520,28 +522,28 @@ def execute_command(command):
         if len(command) > 1:
             execute_go(command[1])
         else:
-            print("Go where?")
+            print(">>> Go where?")
 
     elif command[0] == "take":
         if len(command) > 1:
             execute_take(command[1])
         else:
-            print("Take what?")
+            print(">>> Take what?")
 
     elif command[0] == "drop":
         if len(command) > 1:
             execute_drop(command[1])
         else:
-            print("Drop what?")
+            print(">>> Drop what?")
 
     elif command[0] == "view":
         if len(command) > 1:
             execute_view(command[1])
         else:
-            print("View what?")
+            print(">>> View what?")
 
     else:
-        print("This makes no sense.")
+        print(">>> This makes no sense.")
 
 
 def menu(exits, room_items, inv_items):
@@ -647,6 +649,9 @@ def main():
     while True:
 
         global health
+        # Clear the game screen
+        time.sleep(1.5)
+        os.system('clear')
 
         # check whether the player has met the victory criteria
         if has_won():
