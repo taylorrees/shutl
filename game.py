@@ -14,16 +14,16 @@ def list_of_items(items):
     returns a comma-separated list of item names (as a string). For example:
 
     >>> list_of_items([item_key, item_rope])
-    'master key, some rope'
+    'a master key, some rope'
 
     >>> list_of_items([item_id])
-    'id card'
+    'an id card'
 
     >>> list_of_items([])
     ''
 
     >>> list_of_items([item_brick, item_chocolate, item_fuel])
-    'brick, a chocolate bar, some fuel'
+    'a brick, a chocolate bar, some fuel'
 
     """
 
@@ -45,11 +45,11 @@ def print_room_items(room):
     to produce a comma-separated list of item names. For example:
 
     >>> print_room_items(rooms["Roof"])
-        There is master key, some rope here.
+        There is a master key, some rope here.
     <BLANKLINE>
 
     >>> print_room_items(rooms["Second"])
-        There is first aid kit here.
+        There is a first aid kit here.
     <BLANKLINE>
 
     >>> print_room_items(rooms["Ground Stairwell"])
@@ -85,9 +85,7 @@ def print_inventory_items(items):
     in a players inventory.
 
     >>> print_inventory_items(inventory)
-    You have id card, laptop, money.
-    <BLANKLINE>
-
+    
     """
     items = list_of_items(items)
 
@@ -120,6 +118,9 @@ def find_required_items(inventory, required_items):
     '''This function takes a list of required item dictionaries and checks
     whether each item exists in the players inventory. If all the items are
     found the function will return True, otherwise it will return False.
+
+    >>> find_required_items(inventory, "key")
+    False
     '''
 
     # For each item in required items check if it exists in inventory.
@@ -209,7 +210,7 @@ def print_room(room):
         helicopter you will need a first aid kit, to
         aid the wounded pilot, and fuel.
     <BLANKLINE>
-        There is master key, some rope here.
+        There is a master key, some rope here.
     <BLANKLINE>
     <BLANKLINE>
     <BLANKLINE>
@@ -260,7 +261,7 @@ def print_room(room):
         Make a careful choice as to which route you
         take as this might affect your health.
     <BLANKLINE>
-        There is first aid kit here.
+        There is a first aid kit here.
     <BLANKLINE>
     <BLANKLINE>
     <BLANKLINE>
@@ -307,10 +308,10 @@ def print_exit(direction, leads_to):
     GO <EXIT NAME UPPERCASE> to <where it leads>.
 
     For example:
-    >>> print_exit("east", "you personal tutor's office")
-    GO EAST to you personal tutor's office.
-    >>> print_exit("south", "MJ and Simon's room")
-    GO SOUTH to MJ and Simon's room.
+    >>> print_exit("right", "The Roof Stairwell")
+    Enter GO RIGHT to go to The Roof Stairwell.
+    >>> print_exit("down", "The Second Floor Fire Escape")
+    Enter GO DOWN to go to The Second Floor Fire Escape.
     """
     print("Enter GO " + direction.upper() + " to go to " + leads_to + ".")
 
@@ -497,6 +498,39 @@ def execute_drop(item_id):
 def execute_view(item):
     """This function is responsible for printing the game map
     into the console for the player to view.
+
+    >>> execute_view("map")
+    <BLANKLINE>
+            GAME MAP:
+    <BLANKLINE>
+                    _                                 _
+                    |       ROOF          Stairwell   |
+                    |____________________ _______   _ |
+            Fire    |                    |        _   |
+            Escape  |                    |      _     |
+                    |       THIRD        |    _       |
+                                            _         |
+            |==|___________________________    _______|
+            |==|    |                    |  _         |
+            |==|    |                    |    _       |
+            |==|    |       SECOND       |      _     |
+            |==|                                  _   |
+            |==|___________________________    _______|
+            |==|    |                    |  _         |
+            |==|    |                    |    _       |
+            |==|    |       FIRST        |      _     |
+            |==|                                  _   |
+            |==|______________________________________|
+                    |                    |        _   |
+                    |                    |            |
+                            GROUND       |   Fire     |
+            Debris  |                    |  _         |
+            ........|____________________|____________|
+    <BLANKLINE>
+    <BLANKLINE>
+            START:
+    >>> execute_view("go right")
+
     """
 
     if item == "map":
@@ -509,6 +543,15 @@ def execute_command(command):
     the command: "go", "take", or "drop"), executes either execute_go,
     execute_take, or execute_drop, supplying the second word as the argument.
 
+    >>> execute_command(["go"])
+    <BLANKLINE>
+    Go where?
+    >>> execute_command(["take"])
+    <BLANKLINE>
+    Take what?
+    >>> execute_command(["move"])
+    <BLANKLINE>
+    This makes no sense.
     """
 
     print()
@@ -550,7 +593,6 @@ def menu(exits, room_items, inv_items):
     actions using print_menu() function. It then prompts the player to type an
     action. The players's input is normalised using the normalise_input()
     function before being returned.
-
     """
 
     # Display menu
@@ -600,7 +642,14 @@ def health_is(health, room):
     """ This function is responsible for calculating the players health
     from their existing health and the damage attained from the room they
     are in. Accepts health as an integer value and room as a dictionary
-    with a field damage."""
+    with a field damage.
+    >>> health_is(health, rooms["Roof"])
+    100
+    >>> health_is(65, rooms["Second Stairwell"])
+    60
+    >>> health_is(0, rooms["Second Stairwell"])
+    -5
+    """
 
     damage = (room["damage"])
     return (health - damage)
