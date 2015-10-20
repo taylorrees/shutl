@@ -63,6 +63,95 @@ roof_stairwell = {
 
 }
 
+third_floor = {
+    "name": "The Third Floor",
+
+    "description": [
+
+    """
+    You are now on the third floor. This is where the sprinkler control
+    system for the building is located. Here you have the opportunity to
+    increase your chance of survival by reducing the amount of damage you
+    will receive from the smoke filled stairwells. You must break the
+    glass to activate the sprinklers.
+
+
+                    ----------------------------------
+                   |  ------------------------------  |
+                   |  |                            |  |
+                   |  |                            |  |
+                   |  |                            |  |
+                   |  |        TAP TO BREAK        |  |
+                   |  |            GLASS           |  |
+                   |  |                            |  |
+                   |  |                            |  |
+                   |  |                            |  |
+                   |  ------------------------------  |
+                    ----------------------------------
+
+
+    """
+
+    ],
+
+    "exits": { "left": "Third Fire Escape","right": "Third Stairwell" },
+
+    "items": [],
+
+    "damage": 0,
+
+    "required_items": []
+}
+
+third_stairwell = {
+
+    "name": "The Third Floor Stairwell",
+
+    "description": [
+
+    """
+    You have now entered the third floor stairwell.
+    From here you can go up to the roof or down to the
+    second floor.
+    """
+
+    ],
+
+    "exits": { "up": "Roof Stairwell", "down": "Second Stairwell", "left": "Third" },
+
+    "items": [],
+
+    "damage": 5,
+
+    "required_items": []
+
+}
+
+third_fire_escape = {
+
+    "name": "The Third Floor Fire Escape",
+
+    "description": [
+
+    """
+    You step outside into the fresh air onto the
+    fire escape, there is a ladder leading down to
+    the second floor fire escape. You can go down to
+    get the the second floor.
+    """
+
+    ],
+
+    "exits": { "down": "Second Fire Escape", "right": "Third" },
+
+    "items": [],
+
+    "damage": 0,
+
+    "required_items": []
+
+}
+
 second_floor = {
 
     "name": "The Second Floor",
@@ -98,13 +187,13 @@ second_stairwell = {
 
     """
     You have now entered the second floor stairwell.
-    From here you can go up to the roof or down to the
+    From here you can go up to the third floor or down to the
     first floor.
     """
 
     ],
 
-    "exits": { "up": "Roof Stairwell", "down": "First Stairwell", "left": "Second" },
+    "exits": { "up": "Third Stairwell", "down": "First Stairwell", "left": "Second" },
 
     "items": [],
 
@@ -124,12 +213,13 @@ second_fire_escape = {
     You step outside into the fresh air onto the
     fire escape, there is a ladder leading down to
     the first floor fire escape. You can go down to
-    get the the first floor.
+    get the the first floor or up to the third floor
+    fire escape.
     """
 
     ],
 
-    "exits": { "down": "First Fire Escape", "right": "Second" },
+    "exits": { "down": "First Fire Escape", "up": "Third Fire Escape", "right": "Second" },
 
     "items": [],
 
@@ -288,6 +378,9 @@ ground_stairwell = {
 rooms = {
     "Roof": roof_floor,
     "Roof Stairwell": roof_stairwell,
+    "Third": third_floor,
+    "Third Stairwell": third_stairwell,
+    "Third Fire Escape": third_fire_escape,
     "Second": second_floor,
     "Second Stairwell": second_stairwell,
     "Second Fire Escape": second_fire_escape,

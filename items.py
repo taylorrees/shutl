@@ -4,7 +4,7 @@ item_key = {
 
     "id": "key",
 
-    "name": "master key"
+    "name": "a master key"
 
 }
 
@@ -28,7 +28,7 @@ item_first_aid = {
 
     "id": "aid",
 
-    "name": "first aid kit"
+    "name": "a first aid kit"
 
 }
 
@@ -36,7 +36,7 @@ item_brick = {
 
     "id": "brick",
 
-    "name": "brick"
+    "name": "a brick"
 
 }
 
@@ -51,6 +51,6 @@ item_id = {
 
     "id": "id",
 
-    "name": "id card"
+    "name": "an id card"
 
 }

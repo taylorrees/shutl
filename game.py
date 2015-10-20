@@ -6,6 +6,7 @@ from items import *
 from game_parser import *
 from game_init import *
 from random import randrange
+from break_glass import *
 
 
 def list_of_items(items):
@@ -311,7 +312,7 @@ def print_exit(direction, leads_to):
     >>> print_exit("south", "MJ and Simon's room")
     GO SOUTH to MJ and Simon's room.
     """
-    print("GO " + direction.upper() + " to " + leads_to + ".")
+    print("Enter GO " + direction.upper() + " to go to " + leads_to + ".")
 
 
 def print_menu(exits, room_items, inv_items):
@@ -354,13 +355,15 @@ def print_menu(exits, room_items, inv_items):
         # Print the item id and item name
         id = item["id"].upper()
         name = item["name"]
-        print("TAKE %s to take %s." % (id, name))
+        print("Enter TAKE %s to take %s." % (id, name))
 
     for item in inv_items:
         # Print the item id and item name
         id = item["id"].upper()
         name = item["name"]
-        print("DROP %s to drop %s." % (id, name))
+        print("Enter DROP %s to drop %s." % (id, name))
+
+    print("Enter VIEW MAP to view a map.")
 
     print("\nWhat do you want to do?\n")
 
@@ -419,7 +422,7 @@ def inventory_mass():
 
 def eat_choc():
     """This function is responsible for adding to health
-    when a chocolate bar is taken. If the health is 50 hp 
+    when a chocolate bar is taken. If the health is 50 hp
     or above then health is reset. Otherwise 50 hp will be added.
     """
 
@@ -491,6 +494,15 @@ def execute_drop(item_id):
         print("You cannot drop that.")
 
 
+def execute_view(item):
+    """This function is responsible for printing the game map
+    into the console for the player to view.
+    """
+
+    if item == "map":
+        print(visual_map)
+
+
 def execute_command(command):
     """This function takes a command (a list of words as returned by
     normalise_input) and, depending on the type of action (the first word of
@@ -521,6 +533,12 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
+
+    elif command[0] == "view":
+        if len(command) > 1:
+            execute_view(command[1])
+        else:
+            print("View what?")
 
     else:
         print("This makes no sense.")
@@ -569,17 +587,17 @@ def has_won():
     It defines the victory criteria. The victory criteria are that all items
     in the game must be dropped at reception.
     """
-    
-    if current_room == rooms["Ground"]: 
+
+    if current_room == rooms["Ground"]:
         required_items = current_room["required_items"]
         items_found = find_required_items(inventory, required_items)
-        if items_found: 
+        if items_found:
             return True
-     
 
 
-def health_is(health, room): 
-    """ This function is responsible for calculating the players health 
+
+def health_is(health, room):
+    """ This function is responsible for calculating the players health
     from their existing health and the damage attained from the room they
     are in. Accepts health as an integer value and room as a dictionary
     with a field damage."""
@@ -589,15 +607,18 @@ def health_is(health, room):
 
 
 def random_place_choc(rooms):
-    """This function is responsible for the random placement of the item item_chocolate. 
+    """This function is responsible for the random placement of the item item_chocolate.
     It loops through each of the rooms apart from the ground floor and the ground floor
-    stairwell and selects a room at random in which to place the item. 
+    stairwell and selects a room at random in which to place the item.
     """
 
     potential_rooms = [
-        "Roof", 
-        "Roof Stairwell", 
-        "Second", 
+        "Roof",
+        "Roof Stairwell",
+        "Third",
+        "Third Stairwell",
+        "Third Fire Escape",
+        "Second",
         "Second Stairwell",
         "Second Fire Escape",
         "First",
@@ -608,7 +629,6 @@ def random_place_choc(rooms):
     stop = len(potential_rooms)
     n = randrange(0, stop)
     room = rooms[potential_rooms[n]]
-    print(room["name"])
     room["items"].append(item_chocolate)
 
 
@@ -643,7 +663,10 @@ def main():
 
             if health <= 0:
                 print ("YOU ARE DEAD SUCKER")
-                break 
+                break
+
+            if current_room == rooms["Third"]:
+                break_glass_game()
 
             # Show the menu with possible actions and ask the player
             command = menu(current_room["exits"], current_room["items"], inventory)
