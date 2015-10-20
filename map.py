@@ -197,7 +197,7 @@ second_stairwell = {
 
     "items": [],
 
-    "damage": 5,
+    "damage": 10,
 
     "required_items": []
 
@@ -276,7 +276,7 @@ first_stairwell = {
 
     "items": [],
 
-    "damage": 10,
+    "damage": 15,
 
     "required_items": []
 
@@ -298,10 +298,11 @@ first_fire_escape = {
     """,
 
     """
-    You have attached the rope to the fire
-    escape to climb down and used the brick to smash the window. You have successfully attained the items
-    which will allow you to cascade down to the ground
-    floor. Your inventory has now been cleared.
+    You have successfully attained the items. You have 
+    attached the rope to the fire escape to climb down 
+    and used the brick to smash the window. This will 
+    allow you to cascade down to the ground floor. Your 
+    inventory has now been cleared.
     """
 
     ],

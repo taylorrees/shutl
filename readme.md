@@ -1,4 +1,4 @@
-# SHUTL
+10# SHUTL
 ## CM1101 Group Project
 
 A small text based game built using python. The game has a
