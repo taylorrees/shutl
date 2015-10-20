@@ -39,6 +39,7 @@ game_description = '''
         dangerous smoke. The more moves you take, the more
         health you may lose, for example, moving from room
         to room will differ from how many points it will
+        take from your health.
 
         Choose your moves wisely.
 '''
