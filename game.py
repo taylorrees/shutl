@@ -87,7 +87,7 @@ def print_inventory_items(items):
     in a players inventory.
 
     >>> print_inventory_items(inventory)
-    
+
     """
     items = list_of_items(items)
 
@@ -685,6 +685,22 @@ def random_place_choc(rooms):
     room = rooms[potential_rooms[n]]
     room["items"].append(item_chocolate)
 
+def clear_screen():
+    """This function detects the OS and runs the clear screen
+    code for that OS. Also pauses the screen before clearing
+    so that messages can be read.
+    """
+
+    # Pause execution
+    time.sleep(1.5)
+
+    # Clear the game screen
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
+
 
 # This is the entry point of our program
 def main():
@@ -698,9 +714,8 @@ def main():
     while True:
 
         global health
-        # Clear the game screen
-        time.sleep(1.5)
-        os.system('clear')
+
+        clear_screen()
 
         # check whether the player has met the victory criteria
         if has_won():
