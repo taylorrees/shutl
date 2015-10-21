@@ -465,7 +465,7 @@ def execute_take(item_id):
 
         # If the match condition is True add item to
         # inventory and remove from the current room
-        
+
         if match and len(inventory) < 2:
             inventory.append(item)
             items.remove(item)
@@ -728,7 +728,7 @@ def main():
             if has_won():
 
                 print("\nCONGRATULATIONS YOU WON!")
-                print("\nYou should have used the lift.")
+                print("\nBut you really Should Have Used The Lift (SHUTL).\n")
                 break
 
             else:
@@ -752,7 +752,7 @@ def main():
 
                     # Show the menu with possible actions and ask the player
                     command = menu(current_room["exits"], current_room["items"], inventory)
-                    
+
                     if command == True:
                         print("\nCONGRATULATIONS SMART PERSON, YOU WON!\n")
                         break
