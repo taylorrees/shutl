@@ -53,7 +53,7 @@ roof_stairwell = {
 
     ],
 
-    "exits": { "down": "Second Stairwell", "left": "Roof" },
+    "exits": { "down": "Third Stairwell", "left": "Roof" },
 
     "items": [],
 
@@ -298,10 +298,10 @@ first_fire_escape = {
     """,
 
     """
-    You have successfully attained the items. You have 
-    attached the rope to the fire escape to climb down 
-    and used the brick to smash the window. This will 
-    allow you to cascade down to the ground floor. Your 
+    You have successfully attained the items. You have
+    attached the rope to the fire escape to climb down
+    and used the brick to smash the window. This will
+    allow you to cascade down to the ground floor. Your
     inventory has now been cleared.
     """
 
