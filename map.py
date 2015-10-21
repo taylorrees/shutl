@@ -48,7 +48,7 @@ roof_stairwell = {
     """
     You have now entered the top stairwell.
     From here you can go out onto the roof or
-    go down to the second floor.
+    go down to the third floor.
     """
 
     ],
