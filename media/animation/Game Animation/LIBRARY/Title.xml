@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Title" itemID="5626a68d-00000217" symbolType="graphic" lastModified="1445373581">
+  <timeline>
+    <DOMTimeline name="Title">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" left="-144.1" width="432.2" height="127.45" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix a="0.200836181640625" d="0.200836181640625" tx="29.35" ty="0.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="71.95" y="63.75"/>
+                  </transformationPoint>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>SHUTL</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="120" bitmapSize="2400" face="OCRAStd" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
