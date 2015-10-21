@@ -471,7 +471,7 @@ def execute_take(item_id):
             items.remove(item)
             print(">>> You took %s." % item["name"])
         else:
-            print(">>> You cannot take that.")
+            print(">>> You cannot take that. (Hint: You cannot carry more than two items at a time.)")
 
 
 
@@ -752,8 +752,7 @@ def main():
 
                     # Show the menu with possible actions and ask the player
                     command = menu(current_room["exits"], current_room["items"], inventory)
-                    print(command)
-
+                    
                     if command == True:
                         print("\nCONGRATULATIONS SMART PERSON, YOU WON!\n")
                         break
