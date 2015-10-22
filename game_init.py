@@ -3,43 +3,47 @@ game_description = '''
         GAME DESCRIPTION:
 
         You wake up on the second floor of a tower
-        building in a blaze of thick smoke. You attempt
-        to gasp for air you desperately need. You soon
-        find out that you had been knocked unconscious
+        building in a blaze of thick smoke. You are gasping
+        for the air you so desperately need. You soon
+        discover out that you had been knocked unconscious
         in the mist of a raging fire. You must escape
-        to save your life. On your way out there will
-        be essential items which are needed to aid
+        to save your life.
+
+        On your way out there will be some
+        essential items which are needed to aid
         your attempt to live. Only the correct items
         will lead you to the exit to save you from being
-        engulfed by the fire. Otherwise you may die due
-        to being smothered by the thick black smoke which
-        is getting thicker and closer by the second.
+        engulfed by the fire. As the black smoke gets
+        thicker and closer by the second there is a
+        risk that you will be smothered. You are able to
+        move left, right, up and down between floors.
 
-        You are able to move left and right then up and
-        down floors. There is a door located in the building
+        There is a door located in the building
         which will allow you to escape. There is a fire exit
-        towards the left hand side of the building. You are
-        agonisingly close to the ground floor but not close
-        enough to jump without dying. Also, on the roof is a
-        helicopter, the helicopter has come to save you but
-        you may find a few obstacles
-        on the way.
+        towards the left hand side of the building. This will
+        take you agonisingly close to the ground floor,
+        but not close enough to jump, without dying. Also,
+        on the roof is a helicopter. The helicopter has come
+        to save you, but you may discover a few obstacles
+        along the way.
 
         Finding the items throughout the building will help
-        you overcome the obstacles along the way. You can
-        only carry TWO ITEMS at a time. You can drop certain
-        items to pick up others, but you have to remember
-        where you left them. There is a chocolate bar that
-        you may pick up along your path, if your health is
-        below 50 it will give you 50 bonus points otherwise
-        if your above 50 then it regenerates your health back
-        to 100. You must think wisely to which exit will be
-        the easiest and quickest as your health will slowly
+        you overcome these obstacles. You can only carry TWO
+        ITEMS at a time. You can drop certain items to pick
+        up others, but you have to remember where you left them.
+
+        There is a chocolate bar that will be randomly placed
+        within the game. If you manage to find the choclate
+        on your travels, you may pick it up. If your health is
+        below 50 HP, it will add 50 health points, otherwise
+        it will regenerate your health back to 100.
+
+        You must think wisely to which exit will be
+        the easiest and quickest to use as your health will slowly
         be decreasing due to the venomous fire and the
         dangerous smoke. The more moves you take, the more
-        health you may lose, for example, moving from room
-        to room will differ from how many points it will
-        take from your health.
+        health you may lose. Moving from room to room will
+        differ how many health points you will lose.
 
         Choose your moves wisely.
 '''
